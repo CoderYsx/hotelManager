@@ -18,7 +18,6 @@ class getRoomController extends Controller
         return $res != null ?
             response()->success(200, '获取成功!', $res) :
             response()->fail(100, '获取失败!');
-
     }
 
     //获取当前修改客房信息
@@ -37,19 +36,17 @@ class getRoomController extends Controller
 
     //修改客房状态
     public function updateInfo(Request $request){
-        $info=$request->all();
-        $id=$info['room_id'];
-        $name=$info['name'];
 
-        $res=CheckRecord::updateInfo($id,$name);
+        $id=$request->input('room_id');
+        $name=$request->input('name');
+        $classid=CheckRecord::getClassid($id);
+        $a=$classid[0]->class_id;
+        $res=CheckRecord::updateInfo($a,$name);
         if($res==1){
             response()->success(200, '修改成功!');
         }else{
             response()->fail(100, '修改失败!');
         }
-
-        echo "修改客房状态";
-
 
 
     }

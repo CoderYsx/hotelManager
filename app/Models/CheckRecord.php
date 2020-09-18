@@ -22,10 +22,23 @@ class CheckRecord extends Model
             return null;
         }
     }
+    //通过房间号查询类别号
+    public static function getClassid($room_id){
+        try{
+            $classid=DB::table('room_info')->distinct()->where('room_id',$room_id)->select('class_id')->get();
+            return $classid;
 
-    public static function updateInfo($id,$name){
+        }catch (\Exception $e){
+            die($e->getMessage());
+            return null;
+        }
+
+    }
+
+    public static function updateInfo($a,$name){
+
          try{
-             $res=DB::table('room3')->where('room_id',$id)->update(['$name' =>$name]);
+             $res=DB::table('room_class')->where('class_id',$a)->update(['name' => $name]);
              return $res;
          }catch (Exception $e){
              die($e->getMessage());
