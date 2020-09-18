@@ -14,3 +14,13 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+//第一个
+Route::get('/getRoom','Ysh\getRoomController@getRoom');
+Route::get('/getUpdateInfo','Ysh\getRoomController@getUpdateInfo');
+Route::post('/updateRoom','Ysh\getRoomController@updateInfo');
+Route::get('/getSRoom','Ysh\getRoomController@getSearchroom');
+
+//第二个
+Route::get('/getRoomInfo','Ysh\RoomInfoController@getRoomInfo');
+Route::get('/updateRoomInfo','Ysh\RoomInfoController@UpdateRoomInfo');
