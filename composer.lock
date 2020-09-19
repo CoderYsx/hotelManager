@@ -1218,7 +1218,9 @@
                     "type": "tidelift"
                 }
             ],
+
             "time": "2020-09-11T19:00:58+00:00"
+
         },
         {
             "name": "nikic/php-parser",
