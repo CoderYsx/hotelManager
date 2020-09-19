@@ -24,3 +24,16 @@ Route::prefix('admin/oAuth')->namespace('Admin\OAuth')->group(function () {
     Route::post('registered', 'AuthController@registered'); //注册用户
     Route::get('info', 'AuthController@info'); //注册用户
 });
+
+Route::prefix('Ysh')->namespace('Ysh')->group(function (){
+    Route::get('/getRoom','getRoomController@getRoom');
+    Route::get('/getUpdateInfo','getRoomController@getUpdateInfo');
+    Route::get('/updateRoom','getRoomController@updateInfo');
+    Route::get('/getSRoom','getRoomController@getSearchroom');
+});
+
+Route::prefix('Ysh')->namespace('Ysh')->group(function (){
+    Route::get('/getRoomInfo','RoomInfoController@getRoomInfo');
+    Route::get('/updateRoomInfo','RoomInfoController@UpdateRoomInfo');
+
+});

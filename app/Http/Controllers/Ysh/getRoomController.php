@@ -12,7 +12,7 @@ class getRoomController extends Controller
     //获取某个状态下的所有客房信息
     public function getRoom(){
 
-        echo "获取某个状态下的所有客房信息";
+        //echo "获取某个状态下的所有客房信息";
         $res=CheckRecord::getAllRoom();
         dd($res);
         return $res != null ?

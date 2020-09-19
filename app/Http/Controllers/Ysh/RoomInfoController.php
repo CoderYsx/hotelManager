@@ -15,7 +15,7 @@ class RoomInfoController extends Controller
             response()->success(200, '获取成功!', $res) :
             response()->fail(100, '获取失败!');
 
-        echo "获取房间类别信息";
+        //echo "获取房间类别信息";
 
     }
 
